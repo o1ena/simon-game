@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simon game</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="font-awesome-animation.min.css">
+<header>
+    <h1>Simon Game<i class="fa fa-question-circle" id="help"></i>
+        <div class='help_popup'>
+            <h2 style="color:#006992">Game Rules</h2>
+                <p>You are presented with a sequence of button presses. The length of the sequence is the same as the current round you're on. After the sequence is done playing, you press the hexagon in the same pattern that just played.
+                <li>If you enter the entire current sequence correctly, the round will increase. The pattern will play again, adding one more button press at the end of the sequence. The game continues like this until round 20.</li>
+                <li>If you enter the sequence incorrectly, a sound will play letting you know you made a mistake. If the mode is set to 'forgiving' (the default) the pattern will play again, and you can try again. If the mode is 'strict' the pattern will reset and you'll have to start all over from round 1.</li>
+                <li>If you beat round 20, you'll win the game! You'll be notified of your victory and the game will start over.</li>                  </div>
+    </h1>
+    <div class='settings'>
+        <label for="game-round" id="round" title='Game Round'>round</label>
+        <input class='game-round' id="round-value" value='0'></input>
+        <label for="checkbox" id="strict" title='Turn ON/OFF Strict Mode'>strict</label>
+        <label class="switch">
+    <input type="checkbox" onclick='strictMode()'></input>
+  <span class="slider round"></span>
+  </label>
+    </div>
+    <p class='message'></p>
+</header>
+<i class="fa fa-undo" id="reset" aria-hidden="true" title='Restart the game' onclick="restartGame()"></i>
+<div class="wrap">
+    <div class="hex-box red" id='red' onClick="savePlayerSequence(this.id)">
+        <a class="hex1 red" href="#">
+            <div class="hex2 red"></div>
+            <div class="hex3 red"></div>
+        </a>
+    </div>
+    <div class="hex-box green" id='green' onClick="savePlayerSequence(this.id)">
+        <a class="hex1 green" href="#">
+            <div class="hex2 green"></div>
+            <div class="hex3 green"></div>
+        </a>
+    </div>
+    <div class="hex-box blue" id='blue' onClick="savePlayerSequence(this.id)">
+        <a class="hex1 blue" href="#">
+            <div class="hex2 blue"></div>
+            <div class="hex3 blue"></div>
+        </a>
+    </div>
+    <div class="hex-box yellow" id='yellow' onClick="savePlayerSequence(this.id)">
+        <a class="hex1 yellow" href="#">
+            <div class="hex2 yellow"></div>
+            <div class="hex3 yellow"></div>
+        </a>
+    </div>
+</div>
+<footer>
+    <p class=made-by><i class="fa fa-copyright" aria-hidden="true"></i> made by <a href="https://codepen.io/o1ena/full/gmXWrN/" target="_blank">o1ena</a>
+    </p>
+</footer>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
